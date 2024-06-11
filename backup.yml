@@ -1,0 +1,10 @@
+apiVersion: velero.io/v1
+kind: Backup
+metadata:
+  name: full-cluster-backup
+  namespace: velero
+spec:
+  includedNamespaces:
+    - '*'
+  storageLocation: s3-bucket
+  ttl: 720h0m0s

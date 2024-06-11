@@ -1,0 +1,14 @@
+apiVersion: velero.io/v1
+kind: BackupStorageLocation
+metadata:
+  name: s3-bucket
+  namespace: velero
+spec:
+  provider: aws
+  config:
+    region: <REGION>
+    bucket: <BUCKET_NAME>
+    s3ForcePathStyle: "false"
+  credential:
+    secretContents:
+      cloud: <secret-that-you-created-earlier> || aws-creds
